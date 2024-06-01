@@ -20,8 +20,8 @@ body {
 }
 
 #flashcard {
-    width: 192px; /* Adjust based on your image size */
-    height: 268px; /* Adjust based on your image size */
+    width: 240px; /* Adjust based on your image size */
+    height: 335px; /* Adjust based on your image size */
     transform-style: preserve-3d;
     transition: transform 0.5s;
 }
