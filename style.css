@@ -131,6 +131,59 @@ a:hover {
     overflow-y: auto; /* Enables scrolling for overflow content */
     border-radius: 10px; /* Rounded corners for a softer look */
 }
+.Buttons {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    margin: 0 auto; /* Center the joystick horizontally */
+}
+#flip {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    right: -20px;
+    transform: translate(-50%, -50%);
+}
+
+#Up {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#Down {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#Back {
+  
+    position: absolute;
+    top: 35%;
+    left: -25%;
+    transform: translateY(-50%);
+}
+
+#next {
+   
+    position: absolute;
+    top: 35%;
+    right: -25%;
+    transform: translateY(-50%);
+}
+
+#random {
+        position: absolute;
+        bottom: 10%;
+        right: -75px; /* Adjust distance from Next button */
+        transform: translateY(-50%);
+    }
 
 img {
     width: 100%; /* Makes the image responsive */
