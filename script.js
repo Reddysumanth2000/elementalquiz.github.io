@@ -2,9 +2,9 @@ let flashcards = [];
 let currentCard = 0;
 let flipped = false;
 let upl = [
-    0, 1, 3, 4, 5, 6, 7,
-    20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
-    57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70
+    0, 1, 2, 4, 5, 6, 7, 8,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71
 ];
 
 
@@ -67,10 +67,10 @@ document.getElementById("Back").addEventListener("click", () => {
 });
 document.getElementById("Up").addEventListener("click", () => {
     if (currentCard >= 0 && !upl.includes(currentCard)) {
-        if(currentCard< 8){
-            currentCard= currentCard-2;
+        if(currentCard==3){
+            currentCard =0;
         }
-        else if(currentCard<=20){
+        else if(currentCard<=21){
             currentCard=currentCard-8;
         }
         else if(currentCard<=58){
@@ -86,14 +86,14 @@ document.getElementById("Up").addEventListener("click", () => {
     updateCard();
 });
 document.getElementById("Down").addEventListener("click", () => {
-    if (currentCard <= 85) {
+    if (currentCard <= 86) {
         if(currentCard== 0 ){
             currentCard+=3;
         }
-        else if(currentCard<= 12){
+        else if(currentCard<= 11){
             currentCard= currentCard+8;
         }
-        else if(currentCard<=39){
+        else if(currentCard<=38){
             currentCard+=18;
         }
         else {
