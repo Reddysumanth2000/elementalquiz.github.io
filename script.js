@@ -51,15 +51,47 @@ document.querySelector('.close').addEventListener('click', function() {
 document.getElementById("flip").addEventListener("click", () => flipCard(!flipped));
 document.getElementById("next").addEventListener("click", () => {
     if (currentCard < flashcards.length - 1) {
-        currentCard++;
+        if (currentCard == 57) {
+            const isToggleActive = document.getElementById("toggle").checked;
+            if (isToggleActive) {
+                currentCard = 58;
+            } else {
+                currentCard = 72;
+            }
+        }
+        else if  (currentCard == 89) {
+            const isToggleActive = document.getElementById("toggle").checked;
+            if (isToggleActive) {
+                currentCard = 90;
+            } else {
+                currentCard = 104;
+            }
+        } else {
+            currentCard++;
+        }
     } else {
         currentCard = 0; // Loop back to the first card
     }
     updateCard();
 });
 document.getElementById("Back").addEventListener("click", () => {
-    if (currentCard > 0) {
-        currentCard--;
+    if (currentCard > 0) {if (currentCard == 72) {
+        const isToggleActive = document.getElementById("toggle").checked;
+        if (isToggleActive) {
+            currentCard = 71;
+        } else {
+            currentCard = 57;
+        }
+    }
+    else if  (currentCard == 104) {
+        const isToggleActive = document.getElementById("toggle").checked;
+        if (isToggleActive) {
+            currentCard = 103;
+        } else {
+            currentCard = 89;
+        }
+    } else {
+        currentCard--;}
     } else {
         currentCard =flashcards.length - 1 ; // Loop back to the first card
     }
@@ -90,10 +122,10 @@ document.getElementById("Down").addEventListener("click", () => {
         if(currentCard== 0 ){
             currentCard+=3;
         }
-        else if(currentCard<= 11){
+        else if(currentCard<= 12){
             currentCard= currentCard+8;
         }
-        else if(currentCard<=38){
+        else if(currentCard<=39){
             currentCard+=18;
         }
         else {

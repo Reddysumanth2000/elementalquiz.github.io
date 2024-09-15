@@ -1,8 +1,8 @@
 body {
         background-image: url('BBG.jpg');
-        background-position: center; /* Center the background image */
-        background-repeat: no-repeat; /* Do not repeat the image */
-        background-size: 102%; /* Scale the image to cover the entire element */
+        background-position: center; 
+        background-repeat: no-repeat;
+        background-size: 102%; 
         background-attachment: fixed;
         font-family: 'Arial', sans-serif;
         display: flex;
@@ -21,8 +21,8 @@ body {
 }
 
 #flashcard {
-    width: 240px; /* Adjust based on your image size */
-    height: 335px; /* Adjust based on your image size */
+    width: 240px; 
+    height: 335px; 
     transform-style: preserve-3d;
     transition: transform 0.5s;
 }
@@ -36,8 +36,8 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-size: cover; /* Ensure images cover the card */
-    background-position: center; /* Center images */
+    background-size: cover; 
+    background-position: center; 
 }
 
 .front {
@@ -50,14 +50,14 @@ body {
 }
 Buttons{
     display: flex;
-    justify-content: center; /* Center the buttons horizontally */
+    justify-content: center; 
     gap: 10px;
 }
 button {
     margin-top: 20px;
     padding: 10px 20px;
     border: none;
-    background-color: #4b4b4b;
+    background-color: #142b77;
     color: rgb(247, 243, 243);
     border-radius: 5px;
     cursor: pointer;
@@ -69,6 +69,17 @@ button:hover {
 }
 h1 {
     margin-bottom: 20px;
+}
+/* Flex container for Home, Key buttons, and Toggle */
+.menu {
+    display: flex;
+        align-items: center; 
+    padding: 10px;
+}
+
+
+.menu button {
+    margin-bottom: 30px; 
 }
 a {
     display: inline-block;
@@ -112,10 +123,10 @@ a:hover {
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%; /* Full width of the viewport */
-    height: 100%; /* Full height of the viewport */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for dimming effect */
-    z-index: 1000; /* High z-index to ensure popup is on top of other content */
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,28 +136,94 @@ a:hover {
     position: relative;
     padding: 20px;
     width: 85%; /* Responsive width, good for most devices */
-    max-width: 800px; /* Max width to avoid overly large popup on large screens */
-    max-height: 80vh; /* Max height relative to the viewport height */
+    max-width: 800px; 
+    max-height: 80vh; 
     background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-    overflow-y: auto; /* Enables scrolling for overflow content */
-    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    overflow-y: auto; 
+    border-radius: 10px; 
 }
 .Buttons {
     position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 200px; /* Adjust width as needed */
-    height: 200px; /* Adjust height as needed */
-    margin: 0 auto; /* Center the joystick horizontally */
+    width: 200px; 
+    height: 200px; 
+    margin: 0 auto; 
 }
+.container {
+    display: flex; 
+    align-items: center; 
+    padding: 0px;
+}
+
+
+.content {
+    flex: 1; 
+    margin-right: 20px; 
+    color: white;
+}
+
+/* Toggle switch styling */
+.toggle-switch {
+    display: flex;
+    align-items: center;
+}
+
+/* Hide the default checkbox */
+.toggle-input {
+    display: none;
+}
+
+/* Style the toggle switch label */
+.toggle-label {
+    display: block;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+
+}
+
+/* The slider (the round part of the switch) */
+.toggle-label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+
+}
+
+/* When the checkbox is checked, change the background color and move the slider */
+.toggle-input:checked + .toggle-label {
+    background-color: #4caf50;
+}
+
+.toggle-input:checked + .toggle-label::before {
+    transform: translateX(20px);
+}
+
 #flip {
+    background-color: #8b908d;
     position: absolute;
     top: 35%;
     left: 50%;
     right: -20px;
     transform: translate(-50%, -50%);
+}
+
+#flip:hover {
+    background-color: #555; 
 }
 
 #Up {
@@ -156,6 +233,10 @@ a:hover {
     transform: translateX(-50%);
 }
 
+#Up:hover {
+ background-color: #007bff;
+}
+
 #Down {
     position: absolute;
     bottom: 20%;
@@ -163,53 +244,70 @@ a:hover {
     transform: translateX(-50%);
 }
 
+#Down:hover {
+    background-color: #007bff;
+   }
+
 #Back {
   
+    background-color: #d08d1f;
     position: absolute;
     top: 35%;
-    left: -25%;
+    left: -40%;
     transform: translateY(-50%);
+}
+
+#Back:hover {
+    background-color: #f7b54a; 
 }
 
 #next {
    
+    background-color: #d08d1f;
     position: absolute;
     top: 35%;
     right: -25%;
     transform: translateY(-50%);
 }
 
+#next:hover {
+    background-color: #f7b54a;
+}
+
 #random {
         position: absolute;
         bottom: 10%;
-        right: -75px; /* Adjust distance from Next button */
+        right: -75px;
         transform: translateY(-50%);
     }
 
+    #random:hover {
+        background-color: #007bff;
+       }
 img {
-    width: 100%; /* Makes the image responsive */
-    height: auto; /* Maintains the image aspect ratio */
+    width: 100%; 
+    height: auto; 
 }
 
 .close {
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 30px; /* Large enough to be easily clickable */
+    font-size: 30px; 
     font-weight: bold;
     cursor: pointer;
-    color: #444; /* Default color */
+    color: #444; 
 }
 
 .close:hover {
-    color: red; /* Change color on hover for visual feedback */
+    color: red; 
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     h1 {
         font-size: 24px;
-        padding: 0 20px; /* Ensures text doesn't touch the edges */
+        padding: 0 20px; 
     }
     a {
         font-size: 18px;
@@ -227,13 +325,13 @@ img {
 }
 @media (max-width: 300px) {
     #flashcard {
-        width: 80%; /* Makes the card width responsive */
-        height: 80%; /* Keeps the aspect ratio intact */
-        max-width: 300px; /* Maximum width for larger screens */
-        max-height: 200px; /* Maximum height for larger screens */
+        width: 80%; 
+        height: 80%; 
+        max-width: 300px; 
+        max-height: 200px; 
     }
     .face {
-        font-size: 14px; /* Adjusts text size for smaller screens, if you have text */
+        font-size: 14px; 
     }
 }
 
