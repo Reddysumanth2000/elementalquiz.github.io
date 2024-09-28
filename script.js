@@ -7,6 +7,18 @@ let upl = [
     58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71
 ];
 
+function openFullscreen() {
+    const elem = document.documentElement;
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { // Firefox
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { // IE/Edge
+        elem.msRequestFullscreen();
+    }
+}
 
 function loadFlashcards() {
     fetch('flashcards.json')
@@ -47,6 +59,10 @@ document.getElementById('keyButton').addEventListener('click', function() {
 document.querySelector('.close').addEventListener('click', function() {
     document.getElementById('popup').style.display = 'none';
 });
+
+document.addEventListener('click', () => {
+    openFullscreen();
+}, { once: true });
 
 document.getElementById("flip").addEventListener("click", () => flipCard(!flipped));
 document.getElementById("next").addEventListener("click", () => {
