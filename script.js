@@ -22,7 +22,7 @@ function openFullscreen() {
 
 function forceScrollForSafari() {
     if (window.scrollY < 2) {
-      window.scrollTo({ top: 1, behavior: "smooth" });
+        window.scrollTo(0, 2);
     }
   }
   
