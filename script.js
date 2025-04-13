@@ -20,12 +20,34 @@ function openFullscreen() {
     }
 }
 
+function forceScrollForSafari() {
+    if (window.scrollY < 2) {
+      window.scrollTo({ top: 1, behavior: "smooth" });
+    }
+  }
+  
+  window.addEventListener('load', () => {
+    setTimeout(forceScrollForSafari, 100);
+  });
+  
+  window.addEventListener('scroll', () => {
+    forceScrollForSafari();
+  });
+  
+  window.addEventListener('resize', () => {
+    setTimeout(forceScrollForSafari, 100);
+  });
+  
+  window.addEventListener('orientationchange', () => {
+    setTimeout(forceScrollForSafari, 100);
+  });
+
 function loadFlashcards() {
     fetch('flashcards.json')
     .then(response => response.json())
     .then(data => {
         flashcards = data;
-        updateCard(); // Initialize the first card
+        updateCard(); 
     })
     .catch(error => console.error("Could not load flashcards:", error));
 }
