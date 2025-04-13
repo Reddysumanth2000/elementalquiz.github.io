@@ -9,12 +9,11 @@ body {
         justify-content: center;
         align-items: center;
         height: auto;
-        min-height: 105vh;
+        min-height: 101vh;
         flex-direction: column;
         background-color: #060606;
         margin: 0;
         text-align: center;
-        margin-top: 5px;
 }
 
 #flashcard-container {
