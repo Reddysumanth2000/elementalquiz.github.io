@@ -21,24 +21,16 @@ function openFullscreen() {
 }
 
 function forceScrollForSafari() {
+    if (window.scrollY == 0) {
         window.scrollTo(0, 1);
+    }
   }
   
   window.addEventListener('load', () => {
     setTimeout(forceScrollForSafari, 100);
   });
   
-  window.addEventListener('scroll', () => {
-    forceScrollForSafari();
-  });
   
-  window.addEventListener('resize', () => {
-    setTimeout(forceScrollForSafari, 100);
-  });
-  
-  window.addEventListener('orientationchange', () => {
-    setTimeout(forceScrollForSafari, 100);
-  });
 
 function loadFlashcards() {
     fetch('flashcards.json')
