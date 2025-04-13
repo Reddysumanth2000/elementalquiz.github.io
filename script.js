@@ -21,8 +21,8 @@ function openFullscreen() {
 }
 
 function forceScrollForSafari() {
-    if (window.scrollY < 2) {
-        window.scrollTo(0, 2);
+    if (window.scrollY == 0) {
+        window.scrollTo(0, 1);
     }
   }
   
