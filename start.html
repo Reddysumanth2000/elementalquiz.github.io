@@ -49,10 +49,12 @@
     
     </div>
     <script src="script.js"></script>
-    <script> window.onload = function() {
-        setTimeout(function() {
-          window.scrollTo(0, 100);
-        }, 1000); // 1000 milliseconds = 1 second
-      };</script> 
+    <script>
+        window.onload = function () {
+          setInterval(function () {
+            window.scrollTo(0, 50);
+          }, 2000);
+        };
+      </script>       
 </body>
 </html>
